@@ -16,10 +16,14 @@ from datetime import datetime, timedelta
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError, BulkWriteError
 from pymongo.server_api import ServerApi
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # CONFIGURAÇÃO: substitua pela sua URI se quiser
-MONGO_URI = "mongodb+srv://guifrxx_db_user:Ingles.com1@projnosql.23lv2et.mongodb.net/?appName=ProjNoSQL"
-DB_NAME = "map_app_db"
+MONGO_URI = os.getenv("MONGODB_URI")
+DB_NAME = os.getenv("MONGODB_DB")
 
 # Parâmetros de geração
 NUM_USERS = 100

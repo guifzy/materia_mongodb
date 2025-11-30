@@ -1,0 +1,15 @@
+# Ambiente e segredos
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.envrc
+
+# Streamlit
+.streamlit/

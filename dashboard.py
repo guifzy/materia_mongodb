@@ -1,11 +1,12 @@
+import os
 import streamlit as st
-from pymongo import MongoClient
 from datetime import datetime
 import pandas as pd
 import plotly.express as px
 from bson import ObjectId
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from dotenv import load_dotenv
 
 # Configuração da página
 st.set_page_config(
@@ -13,13 +14,23 @@ st.set_page_config(
     layout="wide"
 )
 
+# Carrega variáveis do .env, se existir
+load_dotenv()
+
 # conexao com o MongoDB
 @st.cache_resource
 def connect_mongo():
-    uri = "mongodb+srv://guifrxx_db_user:Ingles.com1@projnosql.23lv2et.mongodb.net/?appName=ProjNoSQL"
-    client = MongoClient(uri, server_api=ServerApi('1'))
-    client.admin.command('ping')
-    return client["map_app_db"]
+    uri = os.getenv("MONGODB_URI")
+    db_name = os.getenv("MONGODB_DB")
+
+    try:
+        client = MongoClient(uri, server_api=ServerApi('1'))
+        client.admin.command('ping')
+    except Exception:
+        client = MongoClient(uri)
+        client.admin.command('ping')
+
+    return client[db_name]
 
 db = connect_mongo()
 
