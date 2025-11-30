@@ -1,4 +1,4 @@
-# materia_mongodb
+# Projeto MongoDB - Mapeamento Doméstico com Identificação de Objetos para Acessibilidade
 
 Projeto de estudo de banco de dados não relacional com MongoDB, incluindo:
 - Estrutura de coleções e dados de exemplo (dump em `base_completa/map_app_db`)
