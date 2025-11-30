@@ -150,5 +150,5 @@ Após iniciar, o Streamlit abrirá no navegador (geralmente `http://localhost:85
 - **Conexão Atlas:** Confira IP allowlist e credenciais no cluster.
 - **Coleção `users+`:** Em `mongosh`, use `db["users+"]` para acessar coleções com caracteres especiais.
 
-## Descrição do Projeto (resumo do PDF)
+## Descrição do Projeto
 - Este repositório inclui o documento `desc_projeto.pdf` presente dentro da pasta `sobre_o_projeto` com a descrição detalhada do contexto, objetivos e etc. 
